@@ -1,11 +1,10 @@
+
 import { parsePythonCode } from '../parsers/PythonParser.js';
 import { parseJavaCode } from '../parsers/JavaParser.js';
 import { parseJavaScriptCode } from '../parsers/JavaScriptParser.js';
 import { parseCppCode } from '../parsers/CppParser.js';
 import { calculateMetrics } from '../utils/calculator.js';
 import AnalysisResult from '../models/AnalysisResult.js';
-
-
 export const analyzeCode = async (req, res) => {
   const { code, language } = req.body;
 
@@ -15,17 +14,17 @@ export const analyzeCode = async (req, res) => {
 
   let ast;
   try {
-    switch (language) {
-      case 'Python':
-        ast = parsePythonCode(code);
+    switch (language.toLowerCase()) { // Ensure language is lowercase
+      case 'python':
+        ast = parsePythonCode(code); // Ensure this function works
         break;
-      case 'Java':
+      case 'java':
         ast = parseJavaCode(code);
         break;
-      case 'JavaScript':
+      case 'javascript':
         ast = parseJavaScriptCode(code);
         break;
-      case 'C++':
+      case 'cpp': // Match the value 'cpp' from the frontend
         ast = parseCppCode(code);
         break;
       default:
@@ -42,7 +41,8 @@ export const analyzeCode = async (req, res) => {
     await analysisResult.save();
     res.json(analysisResult);
   } catch (error) {
-    console.error('Error analyzing code:', error);  // Log the error to the server console
-    res.status(500).json({ error: 'Error analyzing code.' });
+    console.error('Error analyzing code:', error.message); // Log the error message
+    res.status(500).json({ error: 'Error analyzing code.', details: error.message }); // Include details
   }
 };
+

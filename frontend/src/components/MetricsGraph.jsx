@@ -1,4 +1,4 @@
-import PropTypes from 'prop-types';
+ import PropTypes from 'prop-types';
 import { Bar } from 'react-chartjs-2';
 import {
   Chart as ChartJS,
