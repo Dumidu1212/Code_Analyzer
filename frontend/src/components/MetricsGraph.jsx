@@ -22,23 +22,28 @@ ChartJS.register(
 const MetricsGraph = ({ metrics }) => {
   const data = {
     labels: ['Cyclomatic Complexity', 'Cognitive Complexity', 'Maintainability Index'],
-    datasets: [{
-      label: 'Metrics',
-      data: [metrics.cyclomaticComplexity, metrics.cognitiveComplexity, metrics.maintainabilityIndex],
-      backgroundColor: ['rgba(75, 192, 192, 0.6)', 'rgba(255, 99, 132, 0.6)', 'rgba(54, 162, 235, 0.6)'],
-    }],
+    datasets: [
+      {
+        label: 'Metrics',
+        data: [
+          metrics.cyclomaticComplexity,
+          metrics.cognitiveComplexity,
+          metrics.maintainabilityIndex,
+        ],
+        backgroundColor: [
+          'rgba(75, 192, 192, 0.6)',
+          'rgba(255, 99, 132, 0.6)',
+          'rgba(54, 162, 235, 0.6)',
+        ],
+      },
+    ],
   };
 
   const options = {
     responsive: true,
     plugins: {
-      legend: {
-        position: 'top',
-      },
-      title: {
-        display: true,
-        text: 'Code Metrics',
-      },
+      legend: { position: 'top' },
+      title: { display: true, text: 'Code Metrics' },
     },
   };
 

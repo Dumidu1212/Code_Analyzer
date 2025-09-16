@@ -1,8 +1,10 @@
+// models/Feedback.js
 import mongoose from 'mongoose';
 
 const FeedbackSchema = new mongoose.Schema({
-  user: { type: String, required: true },
-  feedback: { type: String, required: true },
+  title: { type: String, required: true },
+  description: { type: String, required: true },
+  userId: { type: String, required: true },
   createdAt: { type: Date, default: Date.now },
 });
 

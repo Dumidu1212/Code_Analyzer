@@ -2,7 +2,6 @@ import Feedback from '../models/Feedback.js';
 
 export const submitFeedback = async (req, res) => {
   const { user, feedback } = req.body;
-
   try {
     const newFeedback = new Feedback({ user, feedback });
     await newFeedback.save();

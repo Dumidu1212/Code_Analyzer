@@ -1,7 +1,9 @@
-import { calculatePythonMetrics } from './calculators/pythonMetricsCalculator.js';
-import { calculateJavaMetrics } from './calculators/javaMetricsCalculator.js';
-import { calculateJavaScriptMetrics } from './calculators/javascriptMetricsCalculator.js';
-import { calculateCppMetrics } from './calculators/cppMetricsCalculator.js';
+// calculator.js
+
+import { calculatePythonMetrics } from './pythonMetricsCalculator.js';
+import { calculateJavaMetrics } from './javaMetricsCalculator.js';
+import { calculateJavaScriptMetrics } from './javaScriptMetricsCalculator.js';
+import { calculateCppMetrics } from './cppMetricsCalculator.js';
 
 export const calculateMetrics = (ast, language) => {
   switch (language) {
