@@ -1,23 +1,23 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
-import SignIn from './pages/SignIn';
-import SignUp from './pages/SignUp';
-import Home from './pages/Home';
-import FeedBack from './Pages/FeedBack';
+import SignIn from './pages/SignIn.jsx';
+import SignUp from './pages/SignUp.jsx';
+import Home from './pages/Home.jsx';
+import FeedBack from './Pages/FeedBack.jsx';
 import Cookies from 'js-cookie';
 import axios from 'axios';
-import AdminDashBoard from './Pages/AdminDashBoard';
-import DeleteUser from './Pages/DeleteUser';
-import FeedbackForm from './Pages/FeedbackForm';
-import DeleteFeedback from './Pages/DeleteFeedback';
-import UpdateFeedback from './Pages/UpdateFeedback';
-import FeedBackAdminDashBoard from './Pages/FeedBackAdminDashBoard';
-import UserProfile from './Pages/UserProfile';
-import EditProfile from './Pages/EditProfile';
-import AboutUs from './Pages/AboutUs';
-import ContactUs from './Pages/ContactUs';
-import ReportPage from './Pages/ReportPage'; // Assuming you have a ReportPage component
+import AdminDashBoard from './Pages/AdminDashBoard.jsx';
+import DeleteUser from './Pages/DeleteUser.jsx';
+import FeedbackForm from './Pages/FeedbackForm.jsx';
+import DeleteFeedback from './Pages/DeleteFeedback.jsx';
+import UpdateFeedback from './Pages/UpdateFeedback.jsx';
+import FeedBackAdminDashBoard from './Pages/FeedBackAdminDashBoard.jsx';
+import UserProfile from './Pages/UserProfile.jsx';
+import EditProfile from './Pages/EditProfile.jsx';
+import AboutUs from './Pages/AboutUs.jsx';
+import ContactUs from './Pages/ContactUs.jsx';
+import ReportPage from './Pages/ReportPage.jsx'; // Assuming you have a ReportPage component
 
 // Helper function to fetch user data from the backend
 const fetchUserData = async () => {
